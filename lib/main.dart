@@ -1,7 +1,8 @@
 import 'pages/first_page.dart';
 
 import 'package:flutter/material.dart';
-import 'pages/first_page.dart';
+
+import 'pages/second_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,22 +20,36 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+   return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
-        backgroundColor: Colors.green
+        backgroundColor: Colors.green,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => FirstPage()),
-            );
-          },
-          child: Text('Go to First Page'),
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FirstPage()),
+              );
+            },
+            child: Text('Go to First Page'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SecondPage()),
+              );
+            },
+            child: Text('Go to Second Page'),
+          ),
+         
+        ],
       ),
+     
     );
   }
 }
