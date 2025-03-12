@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'pages/second_page.dart';
 import 'pages/third_page.dart';
-
+import 'pages/fourth_page.dart';
 void main() {
   runApp(MyApp());
 }
@@ -68,9 +68,30 @@ class HomePage extends StatelessWidget {
             icon: Icon(Icons.navigate_next),
             label: Text('Go to Third Page'),
           )
-        ],
-      ),
+      ,
+      GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FourthPage()),
+              );
+            },
+            child: Container(
+              padding: EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Text(
+                'Go to Fourth Page',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          )
+        ]
+      )
      
     );
+    
   }
 }
